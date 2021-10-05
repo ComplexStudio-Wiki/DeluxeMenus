@@ -1,0 +1,95 @@
+# ---------------------------------------------------------------------- #
+#                    此菜单基于 1.12.0 版本的 DeluxeMenus                 #
+# ---------------------------------------------------------------------- #
+#                                                                        #
+#   提醒 此菜单文件为独立于config.yml外的独立文件                           #
+#        请在添加下述文本至 config.yml 后重置插件 (/dm reload)              #
+#                                                                        #
+# gui_menus:                                                             #
+#   kits:                                                                #
+#     file: kits.yml                                                     #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+menu_title: '&a礼包菜单'
+open_command:
+- kit
+- kits
+size: 27
+update_interval: 1
+open_requirement:
+  requirements:
+    permission:
+      type: has permission
+      permission: essentials.kit
+  deny_commands:
+  - '[message] '
+  - '[message] &8[&b系统&8] &7你没有权限打开这个菜单!'
+  - '[message] '
+items:
+  'cooldown':
+    material: ORANGE_CONCRETE
+    slot: 13
+    priority: 1
+    update: true
+    view_requirement:
+      requirements:
+        permission:
+          type: has permission
+          permission: essentials.kits.example
+        available:
+          type: string equals ignorecase
+          input: '%essentials_kit_is_available_example%'
+          output: 'no'
+    display_name: ' '
+    lore:
+    - "&8• &b名称: &7好吃的梨子"
+    - "&8• &b状态: &7冷却中"
+    - "&8• &b冷却时间: &7%essentials_kit_time_until_available_example%"
+    - ""
+    left_click_commands:
+    - "[refresh]"
+    right_click_commands:
+    - "[refresh]"
+  'available':
+    material: LIME_CONCRETE
+    slot: 13
+    priority: 2
+    update: true
+    view_requirement:
+      requirements:
+        permission:
+          type: has permission
+          permission: essentials.kits.example
+        available:
+          type: string equals ignorecase
+          input: '%essentials_kit_is_available_example%'
+          output: 'yes'
+    display_name: ' '
+    lore:
+    - "&8• &b名称: &7好吃的梨子"
+    - "&8• &b状态: &7可用"
+    - ""
+    - "&8» &b&n点击领取"
+    - ''
+    left_click_commands:
+    - '[player] essentials:kit example'
+    - '[refresh]'
+    - '[refresh]<delay=100>'
+    right_click_commands:
+    - '[player] essentials:kit example'
+    - '[refresh]'
+    - '[refresh]<delay=100>'
+  'locked':
+    material: RED_CONCRETE
+    slot: 13
+    priority: 3
+    update: true
+    display_name: ' '
+    lore:
+    - "&8• &b礼包: &7好吃的梨子"
+    - "&8• &b状态: &7不可用"
+    - ""
+    left_click_commands:
+    - "[close]"
+    right_click_commands:
+    - "[close]"
