@@ -1,0 +1,187 @@
+# ---------------------------------------------------------------------- #
+#                此菜单基于DeluxeMenus的 v1.12.0 版本下编写                #
+# ---------------------------------------------------------------------- #
+#                                                                        #
+#   提醒 此菜单文件为独立于config.yml外的独立文件                           #
+#        请在添加下述文本至 config.yml 后重置插件 (/dm reload)              #
+#                                                                        #
+# gui_menus:                                                             #
+#   mines:                                                               #
+#     file: mines.yml                                                    #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+menu_title: '&9矿区'
+open_command:
+- mine
+- mines
+size: 27
+items:
+#
+# A MINE
+#
+  'A-CURRENT':
+    material: YELLOW_CONCRETE
+    slot: 12
+    priority: 1
+    view_requirement:
+      requirements:
+        anything_here:
+          type: string equals ignorecase
+          input: '%ezrankspro_rank%'
+          output: A
+    display_name: '&eA 矿区'
+    lore:
+    - ''
+    - '&f点击传送至'
+    - '&f&nA矿区&f.'
+    - ''
+    - '&e&l可用'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp A'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp A'
+  'A-UNLOCKED':
+    material: LIME_CONCRETE
+    slot: 12
+    priority: 2
+    display_name: '&aA Mine'
+    lore:
+    - ''
+    - '&f点击传送至'
+    - '&f&nA矿区&f.'
+    - ''
+    - '&a&l不可用'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp A'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp A'
+#
+# B MINE
+#
+  'B-CURRENT':
+    material: YELLOW_CONCRETE
+    slot: 13
+    priority: 1
+    view_requirement:
+      requirements:
+        anything_here:
+          type: string equals ignorecase
+          input: '%ezrankspro_rank%'
+          output: B
+    display_name: '&eB矿区'
+    lore:
+    - ''
+    - '&f点击传送至'
+    - '&f&nB矿区&f.'
+    - ''
+    - '&e&l可用'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp B'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp B'
+  'B-UNLOCKED':
+    material: LIME_CONCRETE
+    slot: 13
+    priority: 2
+    view_requirement:
+      requirements:
+        anything_here:
+          type: has permission
+          permission: ezranks.rank.b
+    display_name: '&aB矿区'
+    lore:
+    - ''
+    - '&fC点击传送至'
+    - '&f&nB矿区&f.'
+    - ''
+    - '&a&l已解锁'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp B'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp B'
+  'B-LOCKED':
+    material: RED_CONCRETE
+    slot: 13
+    priority: 3
+    display_name: '&cB Mine'
+    lore:
+    - ''
+    - '&fClick to travel to'
+    - '&fthe &nB Mine&f.'
+    - ''
+    - '&c&lLOCKED'
+    - ''
+#
+# C MINE
+#
+  'C-CURRENT':
+    material: YELLOW_CONCRETE
+    slot: 14
+    priority: 1
+    view_requirement:
+      requirements:
+        anything_here:
+          type: string equals ignorecase
+          input: '%ezrankspro_rank%'
+          output: C
+    display_name: '&eC矿区'
+    lore:
+    - ''
+    - '&f点击传送至'
+    - '&f&nC矿区&f.'
+    - ''
+    - '&e&l可用'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp C'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp C'
+  'C-UNLOCKED':
+    material: LIME_CONCRETE
+    slot: 14
+    priority: 2
+    view_requirement:
+      requirements:
+        anything_here:
+          type: has permission
+          permission: ezranks.rank.C
+    display_name: '&aC Mine'
+    lore:
+    - ''
+    - '&f点击传送至'
+    - '&f&nC矿区&f.'
+    - ''
+    - '&a&l已解锁'
+    - ''
+    left_click_commands:
+    - '[close]'
+    - '[player] warp C'
+    right_click_commands:
+    - '[close]'
+    - '[player] warp C'
+  'C-LOCKED':
+    material: RED_CONCRETE
+    slot: 14
+    priority: 3
+    display_name: '&cC Mine'
+    lore:
+    - ''
+    - '&fClick to travel to'
+    - '&fthe &nC Mine&f.'
+    - ''
+    - '&c&lLOCKED'
+    - ''
